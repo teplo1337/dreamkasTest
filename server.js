@@ -7,10 +7,10 @@ const express     = require('express'),
       app         = express();
 
 var storage = multer.diskStorage({                                              //настройка Multera путь и имя
-      destination: function (req, file, cb) {
+      destination: (req, file, cb) => {
         cb(null, "./app/public/uploads/")
       },
-      filename: function (req, file, cb) {
+      filename: (req, file, cb) => {
         var pathImage = file.fieldname + '-' + Date.now()+ path.extname(file.originalname);
         cb(null, pathImage)
       }
@@ -25,13 +25,11 @@ app.post('/', upload, (req,res) => {                                            
   client.connect();
   client.query('CREATE TABLE IF NOT EXISTS newimgdata(data json)');             //create table in db
                                                                                 //insert in table in db
-  client.query('INSERT INTO newimgdata VALUES (\'{"name": "'+req.body.name+'", "destination":"'+req.file.destination+req.file.filename+'"}\')', function(err, result) {
-
-    console.log(result)
+  client.query('INSERT INTO newimgdata VALUES (\'{"name": "'+req.body.name+'", "destination":"'+req.file.destination+req.file.filename+'"}\')', (err, result) => {
   });
 
-  client.query("SELECT * FROM newimgdata", function(err, result) {              //select from table in db
-      result.rows.forEach(function (row){
+  client.query("SELECT * FROM newimgdata", (err, result) => {              //select from table in db
+      result.rows.forEach((row) => {
       console.log(row.data);
       });
     });

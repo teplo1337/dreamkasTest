@@ -1,14 +1,26 @@
 <html>
 <head>
-<title></title>
+  <title>Images</title>
+  <link href="/css/style.css" rel="stylesheet">
+  <link href="/css/reset.css" rel="stylesheet">
+  <script src="/js/script.js"></script>
 </head>
 <body>
   <div id="mainBlock">
-    <div id="loadFile">
-      <form name="loadImg", method="post" enctype="multipart/form-data">
-      <input autofocus type="text" autocomplete="on" name="name" placeholder="Наименование изображения" required><br>
-      <input name="image" type="file" accept="image/x-png,image/gif,image/jpeg" required><br>
-      <input type="submit" value="Загрузить фотографию">
+    <div id="apiBlock">
+      <form id="form"  name="loadImg"  method="post" enctype="multipart/form-data">
+        <input id="imgName" type="text" autocomplete="on" name="name" placeholder="Наименование изображения" required><label id="error">обязательное поле!</label><br>
+        <label id="selectFileName">
+          <input id="selectFile" name="image" type="file" accept="image/x-png,image/gif,image/jpeg" required><br>
+          <p>Выбрано изображение...  .jpg</p><br>
+        </label>
+        <input id="startLoad" type="button" value="Загрузить фотографию">
+      </form>
+      <div id="rightSide">
+      <button id="randomButton" type="button">Покажите мне случайное <br> изображение</button>
+      </div>
+    </div>
+    <div id="contentBlock">
     </div>
   </div>
 </body>

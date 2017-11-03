@@ -1,0 +1,68 @@
+* {
+
+}
+body {
+  background-color: #e3e8e6;
+}
+input {
+  border: 1px solid black;
+}
+#imgName{
+  height: 20px;
+  width: 185px;
+}
+#error{
+  display: none;
+  color: red;
+}
+#randomButton {
+  border: 1px solid black;
+  border-radius: 5px;
+  float: right;
+  height: 45px;
+}
+#randomButton:active {
+  background-color: white;
+}
+#startLoad:active {
+  background-color: white;
+}
+#startLoad{
+  border-radius: 5px;
+  height: 30px;
+}
+#selectFile {
+  display: none;
+}
+#selectFileName {
+}
+#p {
+  width: 185px;
+}
+#startLoad {
+  width: 185px;
+}
+#mainBlock {
+  background-color: white;
+  align-self: center;
+  justify-self: center;
+  margin: 100px;
+  padding: 20px;
+  border: 1px solid #cdd1cd;
+}
+#apiBlock {
+  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+#contentBlock {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+#imgBlock {
+  margin: 10px;
+  align: center;
+}
+#img {
+  width:100%;
+}
