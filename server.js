@@ -17,7 +17,7 @@ const storage = multer.diskStorage({                                            
     });
 const upload = multer({ storage: storage }).single('image');                    // настройка функци мультера
 client.connect();
-app.use(express.static('./app/public'));                                        //статик сервер public
+//app.use(express.static('./app/public'));                                      //статик сервер public
 app.get('/', (req,res) => {                                                     //get '/'
   res.sendFile(path.resolve("./app/html/index.html"));
 });
@@ -44,6 +44,6 @@ app.put('/', (req,res) => {
   });
 });
 
-app.listen(8080, () => {                                                        //start server
-  console.log('listen 8080');
+app.listen(8090, () => {                                                        //start server
+  console.log('listen 8090');
 });

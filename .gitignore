@@ -1,2 +1,11 @@
 /node_modules
 /app/public/uploads
+/conf
+/contrib
+/html
+/docs
+/logs
+/temp
+nginx.exe
+shutdown.cmd
+start.cmd
