@@ -10,10 +10,26 @@ window.addEventListener('scroll', () => {
   checkScrollBarStatus(3);
 });
 
-let showMeRandomImage = () => {
-  console.log('ha')
-}
+let showMeRandomImage = () => {                                                 //показать случайное изображение
+  const modalImg      = document.querySelector('#hiddenImg'),
+        modal         = document.querySelector('#myModal'),
+        captionText   = document.querySelector('#modalCaption'),
+        rand          = getRandom(0, imgData.length),
+        randomImgData = {
+          "src":imgData[rand].destination,
+          "caption":imgData[rand].name
+        };
 
+  modalImg.addEventListener('click', () => {
+    modal.style.display = 'none';
+  });
+  modal.style.display = "block";
+  modalImg.src = randomImgData.src;
+  captionText.innerHTML = randomImgData.caption;
+}
+let getRandom = (min, max) => {
+  return Math.round(Math.random() * (max - min) + min);
+}
 let checkScrollBarStatus = (count) => {
   if(document.body.scrollHeight-document.body.scrollTop===document.body.clientHeight){
     if(imgData.length - document.querySelectorAll('#imgBlock').length-count>0){
