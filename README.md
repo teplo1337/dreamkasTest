@@ -7,21 +7,20 @@ Front-end на javascript "app/public/js/script.js"
 
 Статик на NGINX
 
-        server {
-                listen       8080;
-                server_name  static.kekcheburek.ru;
-
-                #charset koi8-r;
-
-                #access_log  logs/host.access.log  main;
-
-                location / {
-                    proxy_pass http://localhost:8090/;
-                }
-
-                location ~ \.(gif|jpg|png|css|js)$ {
-                   root app/public;
+    server {
+        listen       8080;
+        server_name  kekcheburek.ru;
+        location / {
+            proxy_pass http://localhost:8090/;
+        }
+    }
+    server {
+        listen       8080;
+        server_name  static.kekcheburek.ru;
+        location ~ \.(gif|jpg|png|css|js)$ {
+           root app/public;
        }
+    }
 
 # Задание
 
