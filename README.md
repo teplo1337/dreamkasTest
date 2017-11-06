@@ -1,6 +1,32 @@
 # dreamkasTest
 Как все работает на данный момент: http://kekcheburek.ru
 
+Back-end на node.js + express
+
+Front-end на javascript
+
+Статик на NGINX
+server {
+        listen       8080;
+        server_name  static.domain.com;
+
+        #charset koi8-r;
+
+        #access_log  logs/host.access.log  main;
+
+        location / {
+            proxy_pass http://localhost:8090/;
+        }
+
+        location ~ \.(gif|jpg|png|css|js)$ {
+           root app/public;
+       }
+
+
+
+
+
+
 К тебе обратился знакомый фотограф с просьбой сделать одностраничный сайт-портфолио.
 
 Задача: сделать простое портфолио фотографа.
