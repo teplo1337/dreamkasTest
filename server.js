@@ -24,7 +24,7 @@ app.get('/', (req,res) => {                                                     
 app.post('/', upload, (req,res) => {                                            //post '/'
   client.query('CREATE TABLE IF NOT EXISTS newimgdata(data json)');             //create table in db
                                                                                 //insert in table in db
-  client.query('INSERT INTO newimgdata VALUES (\'{"name": "'+req.body.name+'", "destination":"/uploads/'+req.file.filename+'"}\')', (err, result) => {
+  client.query('INSERT INTO newimgdata VALUES (\'{"name": "'+req.body.name+'", "destination":"http://static.kekcheburek.ru/uploads/'+req.file.filename+'"}\')', (err, result) => {
   });
   res.status('200');
   res.end();
