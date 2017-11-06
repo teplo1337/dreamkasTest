@@ -6,7 +6,7 @@ Back-end на node.js + express "server.js"
 Front-end на javascript "app/public/js/script.js"
 
 Статик на NGINX
-
+{
 server {
         listen       8080;
         server_name  static.kekcheburek.ru;
