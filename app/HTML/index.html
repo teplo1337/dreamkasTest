@@ -1,6 +1,6 @@
 <html>
 <head>
-  <title>Images</title>
+  <title>test</title>
   <link href="/css/style.css" rel="stylesheet">
   <link href="/css/reset.css" rel="stylesheet">
   <script src="/js/script.js"></script>
@@ -8,16 +8,16 @@
 <body>
   <div id="mainBlock">
     <div id="apiBlock">
-      <form id="form"  name="loadImg"  method="post" enctype="multipart/form-data">
-        <input id="imgName" type="text" autocomplete="on" name="name" placeholder="Наименование изображения" required><label id="error">обязательное поле!</label><br>
-        <label id="selectFileName">
+      <form id="form" name="loadImg" action="" onsubmit="return false" method="post" enctype="multipart/form-data">
+        <input id="imgName" type="text" autocomplete="on" name="name" placeholder="Наименование изображения" required><label id="error">  обязательное поле!</label><br>
+        <label id="selectLabel">
           <input id="selectFile" name="image" type="file" accept="image/x-png,image/gif,image/jpeg" required><br>
           <p>Выбрано изображение...  .jpg</p><br>
         </label>
-        <input id="startLoad" type="button" value="Загрузить фотографию">
+        <input id="startLoad" type="button" value="Загрузить фотографию"><label id="uploadStatus"></label>
       </form>
       <div id="rightSide">
-      <button id="randomButton" type="button">Покажите мне случайное <br> изображение</button>
+      <button id="randomButton" onclick="showMeRandomImage()" type="button">Покажите мне случайное <br> изображение</button>
       </div>
     </div>
     <div id="contentBlock">

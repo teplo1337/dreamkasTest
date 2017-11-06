@@ -1,6 +1,3 @@
-* {
-
-}
 body {
   background-color: #e3e8e6;
 }
@@ -14,6 +11,10 @@ input {
 #error{
   display: none;
   color: red;
+}
+#uploadStatus{
+  display: none;
+  color: green;
 }
 #randomButton {
   border: 1px solid black;
@@ -61,8 +62,13 @@ input {
 }
 #imgBlock {
   margin: 10px;
-  align: center;
+}
+#p {
+  vertical-align: bottom;
 }
 #img {
   width:100%;
+  height: inherit;
+}
+display: block;
 }
