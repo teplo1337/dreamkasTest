@@ -96,13 +96,12 @@ let update = (obj, count) => {                                                  
 let addImg = (obj, num) => {                                                    //генерация картинок и имен
   const contentBlock = document.querySelector('#contentBlock');
   const img = document.createElement('img');
-  img.id = "img";
+  img.id = "pictures";
   img.src= obj[num].destination;
   img.addEventListener('click', () => {
     showModal(num);
   });
   const p = document.createElement('p');
-  p.id = "p";
   p.innerHTML = obj[num].name;
   const div = document.createElement('div');
   div.id = "imgBlock";
