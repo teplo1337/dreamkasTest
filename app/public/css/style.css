@@ -1,5 +1,6 @@
 body {
   background-color: #e3e8e6;
+  display: grid;
 }
 input {
   border: 1px solid black;

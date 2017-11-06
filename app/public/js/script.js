@@ -11,7 +11,7 @@ window.addEventListener('scroll', () => {                                       
   checkScrollBarStatus(3);
 });
 let showMeRandomImage = () => {                                                 //показать случайное изображение
-  showModal(getRandom(0, imgData.length - 1));
+    showModal(getRandom(0, imgData.length - 1));
 }
 let showModal = (num) => {                                                      //показать на весь экран изоюоажение (номер)
   const modalImg      = document.querySelector('#hiddenImg'),
