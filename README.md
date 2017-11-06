@@ -6,23 +6,23 @@ Back-end на node.js + express "server.js"
 Front-end на javascript "app/public/js/script.js"
 
 Статик на NGINX
-{
-server {
-        listen       8080;
-        server_name  static.kekcheburek.ru;
 
-        #charset koi8-r;
+        server {
+                listen       8080;
+                server_name  static.kekcheburek.ru;
 
-        #access_log  logs/host.access.log  main;
+                #charset koi8-r;
 
-        location / {
-            proxy_pass http://localhost:8090/;
-        }
+                #access_log  logs/host.access.log  main;
 
-        location ~ \.(gif|jpg|png|css|js)$ {
-           root app/public;
+                location / {
+                    proxy_pass http://localhost:8090/;
+                }
+
+                location ~ \.(gif|jpg|png|css|js)$ {
+                   root app/public;
        }
-}
+
 # Задание
 
 К тебе обратился знакомый фотограф с просьбой сделать одностраничный сайт-портфолио.
