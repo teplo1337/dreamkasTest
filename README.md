@@ -1,9 +1,9 @@
 # dreamkasTest
 Как все работает на данный момент: http://kekcheburek.ru
 
-Back-end на node.js + express
+Back-end на node.js + express "server.js"
 
-Front-end на javascript
+Front-end на javascript "app/public/js/script.js"
 
 Статик на NGINX
 server {
@@ -22,10 +22,7 @@ server {
            root app/public;
        }
 
-
-
-
-
+# Задание
 
 К тебе обратился знакомый фотограф с просьбой сделать одностраничный сайт-портфолио.
 
