@@ -15,9 +15,9 @@ const storage = multer.diskStorage({                                            
         cb(null, pathImage)
       }
     });
-const upload = multer({ storage: storage }).single('image');                    // настройка функци мультера
+const upload = multer({ storage: storage, limits: { fileSize: 5*1000*1000 } }).single('image');                    // настройка функци мультера
 client.connect();
-//app.use(express.static('./app/public'));                                      //статик сервер public
+//app.use(express.static('./app/public'));
 app.get('/', (req,res) => {                                                     //get '/'
   res.sendFile(path.resolve("./app/html/index.html"));
 });

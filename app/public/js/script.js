@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {                                       
 let showMeRandomImage = () => {                                                 //показать случайное изображение
   showModal(getRandom(0, imgData.length - 1));
 }
-let showModal = (num) => {                                                     //показать на весь экран изоюоажение (номер)
+let showModal = (num) => {                                                      //показать на весь экран изоюоажение (номер)
   const modalImg      = document.querySelector('#hiddenImg'),
         modal         = document.querySelector('#myModal'),
         captionText   = document.querySelector('#modalCaption'),
@@ -42,6 +42,11 @@ let checkScrollBarStatus = (count) => {                                         
     }
   }
 }
+let changeUploadStatus = (msg) => {
+  let status = document.querySelector('#uploadStatus');
+  status.style.display = "inline";
+  status.innerHTML = '  ' + msg;
+}
 let uploadData = () => {                                                        //загрузка formData на сервер
   var file = document.querySelector('#selectFile').files[0];
   var fd = new FormData();
@@ -52,15 +57,17 @@ let uploadData = () => {                                                        
   xhr.upload.onprogress = function(e) {
     if (e.lengthComputable) {
       let percentComplete = (e.loaded / e.total) * 100;
-      let status = document.querySelector('#uploadStatus');
-      status.style.display = "inline";
-      status.innerHTML = '  ' + percentComplete + '% uploaded';
+      changeUploadStatus(percentComplete + '% uploaded');
     }
   };
   xhr.onload = function() {
     if (this.status == 200) {
+      changeUploadStatus('Success!');
       getImgData(0);
     };
+    if (xhr.status == 413) {
+      changeUploadStatus('File too large!');
+    }
   };
   xhr.send(fd);
 }

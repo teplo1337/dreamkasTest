@@ -39,7 +39,7 @@ input {
   display: none;
 }
 
-#p {
+p {
   width: 185px;
   vertical-align: bottom;
 }
@@ -65,7 +65,7 @@ input {
   margin: 10px;
 }
 
-#img {
+img {
   width:100%;
   height: inherit;
 }
