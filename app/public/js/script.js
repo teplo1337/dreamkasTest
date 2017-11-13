@@ -4,7 +4,7 @@ this.addEventListener('load', () => {
   getImgData(12);                                                               //запрос на сервер, и добавление 12 картинок если они есть
   addEventUpload();                                                             //обработка клика загрузки
   addEventRandomButton();                                                       //лисен для кнопки рандомного изображения
-  addEventSelectLabel();                                                        //лисен для изменения лейбла с именем файл после его выболра в форме
+  addEventSelectLabel();                                                        //лисен для изменения лейбла с именем файл после его выбора в форме
 });
 
 window.addEventListener('scroll', () => {                                       //событие скролл
@@ -13,7 +13,7 @@ window.addEventListener('scroll', () => {                                       
 let showMeRandomImage = () => {                                                 //показать случайное изображение
     showModal(getRandom(0, imgData.length - 1));
 }
-let showModal = (num) => {                                                      //показать на весь экран изоюоажение (номер)
+let showModal = (num) => {                                                      //показать на весь экран изображение (номер)
   const modalImg      = document.querySelector('#hiddenImg'),
         modal         = document.querySelector('#myModal'),
         captionText   = document.querySelector('#modalCaption'),
@@ -29,10 +29,10 @@ let showModal = (num) => {                                                      
   modalImg.src = oneOFImgData.src;
   captionText.innerHTML = oneOFImgData.caption;
 }
-let getRandom = (min, max) => {                                                 //генератор целых рандомны чисел
+let getRandom = (min, max) => {                                                 //генератор целых рандомных чисел
   return Math.round(Math.random() * (max - min) + min);
 }
-let checkScrollBarStatus = (count) => {                                         //проверка стутуса скролл бара (scrollHeight - scrollTop\ == clientHeight)
+let checkScrollBarStatus = (count) => {                                         //проверка статуса скролл бара (scrollHeight - scrollTop\ == clientHeight)
   if(document.body.scrollHeight-document.body.scrollTop===document.body.clientHeight){
     if(imgData.length - document.querySelectorAll('#imgBlock').length-count>0){
       update(imgData, count);
@@ -71,7 +71,7 @@ let uploadData = () => {                                                        
   };
   xhr.send(fd);
 }
-let getImgData = (count) => {                                                   //получение img data
+let getImgData = (count) => {                                                   //получение информации о изображениях с сервера
   var xhr = new XMLHttpRequest();
   xhr.open("PUT", '/', true);
   xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
@@ -89,7 +89,7 @@ let getImgData = (count) => {                                                   
   xhr.send();
 }
 
-let update = (obj, count) => {                                                  // промежуточная функция картинок и имен
+let update = (obj, count) => {                                                  // промежуточная функция генерации картинок и имен
   if(count!=0){for(let i=0;i<count;i++){addImg(obj, document.querySelectorAll('#imgBlock').length)}}
 }
 
