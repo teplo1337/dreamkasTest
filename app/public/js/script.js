@@ -10,9 +10,11 @@ this.addEventListener('load', () => {
 window.addEventListener('scroll', () => {                                       //событие скролл
   checkScrollBarStatus(3);
 });
+
 let showMeRandomImage = () => {                                                 //показать случайное изображение
     showModal(getRandom(0, imgData.length - 1));
 }
+
 let showModal = (num) => {                                                      //показать на весь экран изображение (номер)
   const modalImg      = document.querySelector('#hiddenImg'),
         modal         = document.querySelector('#myModal'),
@@ -29,9 +31,11 @@ let showModal = (num) => {                                                      
   modalImg.src = oneOFImgData.src;
   captionText.innerHTML = oneOFImgData.caption;
 }
+
 let getRandom = (min, max) => {                                                 //генератор целых рандомных чисел
   return Math.round(Math.random() * (max - min) + min);
 }
+
 let checkScrollBarStatus = (count) => {                                         //проверка статуса скролл бара (scrollHeight - scrollTop\ == clientHeight)
   if(document.body.scrollHeight-document.body.scrollTop===document.body.clientHeight){
     if(imgData.length - document.querySelectorAll('#imgBlock').length-count>0){
@@ -42,11 +46,13 @@ let checkScrollBarStatus = (count) => {                                         
     }
   }
 }
+
 let changeUploadStatus = (msg) => {
   let status = document.querySelector('#uploadStatus');
   status.style.display = "inline";
   status.innerHTML = '  ' + msg;
 }
+
 let uploadData = () => {                                                        //загрузка formData на сервер
   var file = document.querySelector('#selectFile').files[0];
   var fd = new FormData();
@@ -71,6 +77,7 @@ let uploadData = () => {                                                        
   };
   xhr.send(fd);
 }
+
 let getImgData = (count) => {                                                   //получение информации о изображениях с сервера
   var xhr = new XMLHttpRequest();
   xhr.open("PUT", '/', true);
@@ -109,11 +116,13 @@ let addImg = (obj, num) => {                                                    
   div.appendChild(p);
   contentBlock.appendChild(div);
 }
+
 let addEventRandomButton = () => {
   document.querySelector('#randomButton').addEventListener('click', () => {
     showMeRandomImage();
   });
 }
+
 let addEventUpload = () => {
   document.querySelector('#startLoad').addEventListener('click', () => {        //обработка клика загрузки
     const selectFile = document.querySelector('#selectFile');
@@ -135,6 +144,7 @@ let addEventUpload = () => {
     }
   });
 }
+
 let addEventSelectLabel = () => {
   document.querySelector('#selectFile').addEventListener('change', (item) => {  //лисен для загрузки файла
     const path = document.querySelector('#selectFile').value;
