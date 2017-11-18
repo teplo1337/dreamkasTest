@@ -1,5 +1,5 @@
 "use strict";
-var imgData;
+let imgData;
 this.addEventListener('load', () => {
   getImgData(12);                                                               //запрос на сервер, и добавление 12 картинок если они есть
   addEventUpload();                                                             //обработка клика загрузки
@@ -54,11 +54,11 @@ let changeUploadStatus = (msg) => {
 }
 
 let uploadData = () => {                                                        //загрузка formData на сервер
-  var file = document.querySelector('#selectFile').files[0];
-  var fd = new FormData();
+  let file = document.querySelector('#selectFile').files[0];
+  let fd = new FormData();
   fd.append("image", file);
   fd.append("name", document.querySelector('#imgName').value);
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.open('POST', '/', true);
   xhr.upload.onprogress = function(e) {
     if (e.lengthComputable) {
@@ -79,7 +79,7 @@ let uploadData = () => {                                                        
 }
 
 let getImgData = (count) => {                                                   //получение информации о изображениях с сервера
-  var xhr = new XMLHttpRequest();
+  let xhr = new XMLHttpRequest();
   xhr.open("PUT", '/', true);
   xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
   xhr.onload = () => {

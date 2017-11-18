@@ -16,7 +16,7 @@ const storage = multer.diskStorage({                                            
       }
     });
 
-const upload = multer({ storage: storage, limits: { fileSize: 5*1000*1000 } }).single('image');  
+const upload = multer({ storage: storage, limits: { fileSize: 5*1000*1000 } }).single('image');
 
 client.connect();
 //app.use(express.static('./app/public'));
@@ -26,7 +26,7 @@ app.get('/', (req,res) => {                                                     
 });
 
 app.post('/', upload, (req,res) => {                                            //обработка метода POST
-  client.query('CREATE TABLE IF NOT EXISTS newimgdata(data json)');            
+  client.query('CREATE TABLE IF NOT EXISTS newimgdata(data json)');
   client.query('INSERT INTO newimgdata VALUES (\'{"name": "'+req.body.name+'", "destination":"http://static.kekcheburek.ru/uploads/'+req.file.filename+'"}\')', (err, result) => {
   });
   res.status('200');
@@ -34,7 +34,7 @@ app.post('/', upload, (req,res) => {                                            
 });
 
 app.put('/', (req,res) => {                                                     //обработка метода PUT
-  client.query("SELECT * FROM newimgdata", (err, result) => {                   
+  client.query("SELECT * FROM newimgdata", (err, result) => {
     if(!err) {
       let imgData = {"data":[]};
       result.rows.forEach((row) => {
