@@ -1,5 +1,5 @@
 # dreamkasTest
-Как все работает на данный момент: http://kekcheburek.ru
+Как все работает на данный момент: http://test.kekcheburek.ru/
 
 Back-end на node.js + express "server.js"
 
