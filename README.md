@@ -9,7 +9,7 @@ Front-end на javascript "app/public/js/script.js"
 
     server {
         listen       8080;
-        server_name  kekcheburek.ru;
+        server_name  test.kekcheburek.ru;
         location / {
             proxy_pass http://localhost:8090/;
         }
