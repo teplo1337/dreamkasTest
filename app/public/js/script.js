@@ -1,7 +1,7 @@
 "use strict";
 let imgData;
 this.addEventListener('load', () => {
-  getImgData(1);                                                               //запрос на сервер, и добавление 12 картинок если они есть
+  getImgData(3);                                                               //запрос на сервер, и добавление 12 картинок если они есть
   addEventUpload();                                                             //обработка клика загрузки
   addEventRandomButton();                                                       //лисен для кнопки рандомного изображения
   addEventSelectLabel();                                                        //лисен для изменения лейбла с именем файл после его выбора в форме
