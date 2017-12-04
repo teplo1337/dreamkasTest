@@ -37,8 +37,8 @@ let getRandom = (min, max) => {                                                 
 }
 
 let checkScrollBarStatus = (count) => {                                         //проверка статуса скролл бара (scrollHeight - scrollTop\ == clientHeight)
-  if(document.body.scrollHeight-document.body.scrollTop===document.body.clientHeight){
-    if(imgData.length - document.querySelectorAll('#imgBlock').length-count>0){
+  if(document.body.scrollHeight-document.body.scrollTop === document.body.clientHeight){
+    if(imgData.length - document.querySelectorAll('#imgBlock').length - count>0){
       update(imgData, count);
     }
     else{
@@ -87,7 +87,7 @@ let getImgData = (count) => {                                                   
     if (xhr.readyState == 4 && xhr.status == "200") {
       imgData = response.data;
       console.log(imgData)
-      checkScrollBarStatus(count);
+      update(imgData, count);
     }
     else {
       console.log(xhr.responseText);
