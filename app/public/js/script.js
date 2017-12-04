@@ -37,7 +37,7 @@ let getRandom = (min, max) => {                                                 
 }
 
 let checkScrollBarStatus = (count) => {                                         //проверка статуса скролл бара (scrollHeight - scrollTop\ == clientHeight)
-  if(document.body.scrollHeight-document.body.scrollTop === document.body.clientHeight){
+  if( (document.body.scrollHeight-document.body.scrollTop) - document.body.clientHeight < 3){
     if(imgData.length - document.querySelectorAll('#imgBlock').length - count>0){
       update(imgData, count);
     }
