@@ -5,6 +5,8 @@ Back-end на node.js + express "server.js"
 
 Front-end на javascript "app/public/js/script.js"
 
+База данных: PostgreSQL "postgres://dlumhzyl:fpOHOo0WYy14hshJWpYUrShNFZH9LBRq@dumbo.db.elephantsql.com:5432/dlumhzyl"
+
 Статик на NGINX
 
     server {
