@@ -1,14 +1,14 @@
 "use strict";
 let imgData;
 this.addEventListener('load', () => {
-  getImgData(12);                                                               //запрос на сервер, и добавление 12 картинок если они есть
+  getImgData(1);                                                               //запрос на сервер, и добавление 12 картинок если они есть
   addEventUpload();                                                             //обработка клика загрузки
   addEventRandomButton();                                                       //лисен для кнопки рандомного изображения
   addEventSelectLabel();                                                        //лисен для изменения лейбла с именем файл после его выбора в форме
 });
 
 window.addEventListener('scroll', () => {                                       //событие скролл
-  checkScrollBarStatus(3);
+  checkScrollBarStatus(1);
 });
 
 let showMeRandomImage = () => {                                                 //показать случайное изображение
@@ -37,9 +37,10 @@ let getRandom = (min, max) => {                                                 
 }
 
 let checkScrollBarStatus = (count) => {                                         //проверка статуса скролл бара (scrollHeight - scrollTop\ == clientHeight)
-  if( (document.body.scrollHeight-document.body.scrollTop) - document.body.clientHeight < 3){
-    if(imgData.length - document.querySelectorAll('#imgBlock').length - count>0){
+  if((document.body.scrollHeight-document.body.scrollTop) - document.body.clientHeight < 3){
+    if(imgData.length - document.querySelectorAll('#imgBlock').length-count>0){
       update(imgData, count);
+      checkScrollBarStatus(1)
     }
     else{
       update(imgData, imgData.length - document.querySelectorAll('#imgBlock').length);
@@ -87,7 +88,7 @@ let getImgData = (count) => {                                                   
     if (xhr.readyState == 4 && xhr.status == "200") {
       imgData = response.data;
       console.log(imgData)
-      update(imgData, count);
+      checkScrollBarStatus(count);
     }
     else {
       console.log(xhr.responseText);
@@ -96,8 +97,7 @@ let getImgData = (count) => {                                                   
   xhr.send();
 }
 
-let update = (obj, count) => {
-  if(count > obj.length) { count = obj.length }                                                 // промежуточная функция генерации картинок и имен
+let update = (obj, count) => {                                                  // промежуточная функция генерации картинок и имен
   if(count!=0){for(let i=0;i<count;i++){addImg(obj, document.querySelectorAll('#imgBlock').length)}}
 }
 
