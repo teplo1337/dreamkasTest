@@ -96,7 +96,8 @@ let getImgData = (count) => {                                                   
   xhr.send();
 }
 
-let update = (obj, count) => {                                                  // промежуточная функция генерации картинок и имен
+let update = (obj, count) => {
+  if(count > obj.length) { count = obj.length }                                                 // промежуточная функция генерации картинок и имен
   if(count!=0){for(let i=0;i<count;i++){addImg(obj, document.querySelectorAll('#imgBlock').length)}}
 }
 
