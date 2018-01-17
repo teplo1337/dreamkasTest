@@ -2,22 +2,27 @@ body {
   background-color: #e3e8e6;
   display: grid;
 }
+
 input {
   border: 1px solid black;
 }
+
 #imgName{
   height: 20px;
   width: 185px;
 }
+
 /* статусы */
 #error{
   display: none;
   color: red;
 }
+
 #uploadStatus{
   display: none;
   color: green;
 }
+
 /* кнопки */
 #randomButton {
   border: 1px solid black;
@@ -25,17 +30,21 @@ input {
   float: right;
   height: 45px;
 }
+
 #randomButton:active {
   background-color: white;
 }
+
 #startLoad:active {
   background-color: white;
 }
+
 #startLoad{
   width: 185px;
   border-radius: 5px;
   height: 30px;
 }
+
 #selectFile {
   display: none;
 }
@@ -44,7 +53,9 @@ p {
   width: 185px;
   vertical-align: bottom;
 }
+
 /* блоки */
+
 #mainBlock {
   background-color: white;
   align-self: center;
@@ -53,15 +64,18 @@ p {
   padding: 20px;
   border: 1px solid #cdd1cd;
 }
+
 #apiBlock {
   margin: 10px;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
+
 #contentBlock {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
 #imgBlock {
   margin: 10px;
 }
@@ -72,6 +86,7 @@ p {
 }
 
 /*модальный блок*/
+
 .modal {
     display: none;
     position: fixed;
