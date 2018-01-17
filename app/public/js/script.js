@@ -8,7 +8,7 @@ this.addEventListener('load', () => {
 });
 
 window.addEventListener('scroll', () => {                                       //событие скролл
-  checkScrollBarStatus(1);
+  checkScrollBarStatus(3);
 });
 
 let showMeRandomImage = () => {                                                 //показать случайное изображение
@@ -19,7 +19,7 @@ let showModal = (num) => {                                                      
   const modalImg      = document.querySelector('#hiddenImg'),
         modal         = document.querySelector('#myModal'),
         captionText   = document.querySelector('#modalCaption'),
-        oneOFImgData = {
+        oneOFImgData  = {
           "src":imgData[num].destination,
           "caption":imgData[num].name
         };
@@ -40,7 +40,7 @@ let checkScrollBarStatus = (count) => {                                         
   if((document.body.scrollHeight-document.body.scrollTop) - document.body.clientHeight < 3){
     if(imgData.length - document.querySelectorAll('#imgBlock').length-count>0){
       update(imgData, count);
-      checkScrollBarStatus(1)
+      checkScrollBarStatus(3);
     }
     else{
       update(imgData, imgData.length - document.querySelectorAll('#imgBlock').length);
